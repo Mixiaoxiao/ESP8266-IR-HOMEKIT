@@ -1,0 +1,19 @@
+该固件适用于1M的Falsh的ESP8266芯片,不适用于只有2个通用IO的ESP01
+
+【ESP8266_IR_*】
+- 适用于1M Flash的空调固件，与通用版使用方式无异
+- IR码库做了精简，仅保留KELVINATOR(格力)/COOLIX(美的)/HAIER_AC/HAIER_AC_YRW02(海尔)
+- 如有其他常用空调协议可以联系我加上
+- 固件本身大小约640K，固件更新时先使用【ESP8266_MINI.bin】做中转
+
+【固件升级方法】
+- IR固件体积较大，不能直接由IR固件升级IR固件，需IR->MINI->IR
+- 先从IR固件的Web Update页面升级为MINI固件，访问 http://<esp_ip>/update
+- MINI为中转固件，运行后会生成“ESP_UPDATE_XXXXXX”的热点
+- 连接该热点，浏览器访问http://192.168.4.1/update
+- 上传更新的IR固件
+
+【固件大小】
+IR固件640K
+MINI固件302K，最大可更新为684.00KB的新固件
+1M Flash，分16K的FS，固件总可用空间约984K，即IR+MINI不能超过984K
